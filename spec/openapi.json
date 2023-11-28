@@ -1,0 +1,79 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "API",
+    "description": "API",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Local server"
+    },
+    {
+      "url": "https://api.example.com",
+      "description": "Production server"
+    }
+  ],
+  "tags": [{ "name": "greeting", "description": "挨拶エンドポイント" }],
+  "paths": {
+    "/hello": {
+      "get": {
+        "tags": ["greeting"],
+        "summary": "Returns a greeting message.",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/hello"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/goodbye": {
+      "get": {
+        "tags": ["greeting"],
+        "summary": "Returns a goodbye message.",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/goodbye"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "hello": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Hello, world!"
+          }
+        }
+      },
+      "goodbye": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "example": "Goodbye, world!"
+          }
+        }
+      }
+    }
+  }
+}
