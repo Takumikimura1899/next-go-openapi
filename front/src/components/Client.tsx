@@ -20,7 +20,9 @@ export default function Client() {
 
   const fetchGoodbye = async () => {
     try {
-      const res = await fetch('http://localhost:4010/goodbye');
+      const res = await fetch('http://localhost:4010/goodbye', {
+        next: { revalidate: 10 },
+      });
       const data: components['schemas']['goodbye'] = await res.json();
       if (data.message) {
         setMessage(data.message);
