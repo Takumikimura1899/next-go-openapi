@@ -7,7 +7,8 @@ export default function Client() {
 
   const fetchHello = async () => {
     try {
-      const res = await fetch('http://localhost:4010/hello');
+      const res = await fetch('/api');
+      console.log('res:', res);
       const data: components['schemas']['hello'] = await res.json();
       if (data.message) {
         setMessage(data.message);
@@ -30,10 +31,16 @@ export default function Client() {
   };
 
   return (
-    <div>
-      <button onClick={fetchHello}>Hello</button>
-      <button onClick={fetchGoodbye}>Goodbye</button>
+    <>
       <p>{message}</p>
-    </div>
+      <div className='gap-2 mt-4 flex'>
+        <button className='p-2 rounded-md bg-gray-600' onClick={fetchHello}>
+          Hello
+        </button>
+        <button className='p-2 bg-gray-600 rounded-md' onClick={fetchGoodbye}>
+          Goodbye
+        </button>
+      </div>
+    </>
   );
 }
