@@ -18,61 +18,19 @@
   "tags": [{ "name": "greeting", "description": "挨拶エンドポイント" }],
   "paths": {
     "/hello": {
-      "get": {
-        "tags": ["greeting"],
-        "summary": "Returns a greeting message.",
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/hello"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "./paths/hello.json#/hello"
     },
     "/goodbye": {
-      "get": {
-        "tags": ["greeting"],
-        "summary": "Returns a goodbye message.",
-        "responses": {
-          "200": {
-            "description": "Successful response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/goodbye"
-                }
-              }
-            }
-          }
-        }
-      }
+      "$ref": "./paths/goodbye.json#/goodbye"
     }
   },
   "components": {
     "schemas": {
       "hello": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "example": "Hello, world!"
-          }
-        }
+        "$ref": "./components/schemas/hello.json#/hello"
       },
       "goodbye": {
-        "type": "object",
-        "properties": {
-          "message": {
-            "type": "string",
-            "example": "Goodbye, world!"
-          }
-        }
+        "$ref": "./components/schemas/goodbye.json#/goodbye"
       }
     }
   }

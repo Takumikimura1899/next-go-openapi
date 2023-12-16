@@ -1,0 +1,11 @@
+{
+  "hello": {
+    "type": "object",
+    "properties": {
+      "message": {
+        "type": "string",
+        "example": "Hello, world!"
+      }
+    }
+  }
+}

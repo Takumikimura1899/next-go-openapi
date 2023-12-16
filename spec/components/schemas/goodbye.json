@@ -1,0 +1,11 @@
+{
+  "goodbye": {
+    "type": "object",
+    "properties": {
+      "message": {
+        "type": "string",
+        "example": "Goodbye, world!"
+      }
+    }
+  }
+}
