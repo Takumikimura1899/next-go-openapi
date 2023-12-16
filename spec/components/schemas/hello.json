@@ -3,8 +3,7 @@
     "type": "object",
     "properties": {
       "message": {
-        "type": "string",
-        "example": "Hello, world!"
+        "$ref": "../examples/hello.json#/message"
       }
     }
   }
