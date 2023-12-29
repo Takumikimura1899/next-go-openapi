@@ -1,0 +1,20 @@
+{
+  "serverSideMessage": {
+    "get": {
+      "tags": ["greeting"],
+      "summary": "Returns a greeting message.",
+      "responses": {
+        "200": {
+          "description": "Successful response",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "../components/schemas/serverSideMessage.json#/serverSideMessage"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

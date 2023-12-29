@@ -7,7 +7,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8080",
+      "url": "http://127.0.0.1:8080",
       "description": "Local server"
     },
     {
@@ -22,6 +22,9 @@
     },
     "/goodbye": {
       "$ref": "./paths/goodbye.json#/goodbye"
+    },
+    "/serverSideMessage": {
+      "$ref": "./paths/serverSideMessage.json#/serverSideMessage"
     }
   },
   "components": {
@@ -31,6 +34,9 @@
       },
       "goodbye": {
         "$ref": "./components/schemas/goodbye.json#/goodbye"
+      },
+      "serverSideMessage": {
+        "$ref": "./components/schemas/serverSideMessage.json#/serverSideMessage"
       }
     }
   }

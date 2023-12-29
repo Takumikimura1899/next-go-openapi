@@ -20,7 +20,7 @@ export default function Client() {
 
   const fetchGoodbye = async () => {
     try {
-      const res = await fetch('http://localhost:4010/goodbye', {
+      const res = await fetch('http://127.0.0.1:4010/goodbye', {
         next: { revalidate: 10 },
       });
       const data: components['schemas']['goodbye'] = await res.json();
@@ -34,8 +34,8 @@ export default function Client() {
 
   return (
     <>
-      <p>{message}</p>
-      <div className='gap-2 mt-4 flex'>
+      <p className='text-center'>{message}</p>
+      <div className='gap-2 mt-4 flex justify-center'>
         <button className='p-2 rounded-md bg-gray-600' onClick={fetchHello}>
           Hello
         </button>

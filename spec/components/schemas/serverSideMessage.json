@@ -1,0 +1,10 @@
+{
+  "serverSideMessage": {
+    "type": "object",
+    "properties": {
+      "message": {
+        "$ref": "../examples/serverSideMessage.json#/message"
+      }
+    }
+  }
+}
